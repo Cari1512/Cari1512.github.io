@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>portfolio</title>
+<style>
+body {
+	font-family: arial;
+	font-size: small;
+	background: #eeeee
+}
+</style>
+</head>
+<body>
+    <h1 align="justify"><font color="#084B8A">Carianne Sauermann</font></h1>
+    
+<p align="justify"> <img style="border:7px solid #FFFFFF" src="C:\Users\caria\OneDrive\Dokumente\UNI\EIA1\Steckbrief\bild.jpg" alt="Bild" width="162,8" height="244,2" align="left" > 
+        
+
+	</p>
+	
+	
+	 <!--Portfolio 18.10.2019-->
+</body>
+</html>
