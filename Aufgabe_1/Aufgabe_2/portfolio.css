@@ -1,0 +1,93 @@
+body, header, p, div {
+    max-width: 800px;
+    margin: auto;
+    background-image: url("bg.png");
+    font-family: sans-serif;
+  }
+h1, h2, div {
+  text-align: center;
+}
+a{
+  text-decoration: none;
+}
+nav {
+  position: fixed;
+  top: 0px;
+  right: 150px;
+  width: 250px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 0px 0px 15px 15px;
+  background-color:black;
+  text-align: center;
+  font-size: 20px;
+  background-color:black;
+ 
+  }
+
+.weiß:hover {
+ background: grey;
+}
+.blau:hover {
+  background: grey;
+ }
+.blau {
+  color: blue;
+}
+.weiß{
+  color: white;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.data{
+  color: grey;
+  padding: 10px;
+  text-align: left;
+}
+.data_{
+  text-decoration-line: underline;
+  color: grey;
+}
+input {
+  background: grey;
+  color:white;
+  width: 200px;
+  padding: 10px;
+  text-align: left;
+}
+button{
+  background: grey;
+  color:white;
+  width: 50px;
+  padding: 10px;
+  text-align: left; 
+}
+button:hover{
+  transform: scale(1.5, 1.5);
+}
+textarea {
+  background: grey;
+  color:white;
+  width: 400px;
+  padding: 10px;
+  text-align: left;
+  font-family: sans-serif;
+}
+::placeholder{
+  color: white;
+}
+i{
+  background: none;
+  position: relative;
+  padding: 10px ;
+}
+i:hover{
+  transform: scale(1.5, 1.5);
+}
+section{
+  margin: auto;
+}

@@ -1,0 +1,18 @@
+margin: auto text einzeln
+
+
+wenn breite max 800, breaks im text weg
+
+nav { 
+position: fixed;
+top: 0px:
+right: 150px;
+
+}
+a{
+ color: red;
+background: blue;
+}
+a:hover {
+background: yellow;
+}
