@@ -53,14 +53,14 @@ nav {
   color: grey;
 }
 input {
-  background: grey;
+  background: silver;
   color:white;
   width: 200px;
   padding: 10px;
   text-align: left;
 }
 button{
-  background: grey;
+  background: silver;
   color:white;
   width: 50px;
   padding: 10px;
@@ -70,7 +70,7 @@ button:hover{
   transform: scale(1.5, 1.5);
 }
 textarea {
-  background: grey;
+  background: silver;
   color:white;
   width: 400px;
   padding: 10px;
