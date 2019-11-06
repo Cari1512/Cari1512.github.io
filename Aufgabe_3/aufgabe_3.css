@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+    background-image: url(images/bg.png);
+    font-size: large;
+}
+
+#card { margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#station_1{
+    position: fixed;
+    left: 100px;
+    top: 200px;
+    color: white;
+}
+#station_3{
+    position: fixed;
+    left: 200px;
+    top: 200px;
+    color: white;
+}
+#station_4{
+    position: fixed;
+    left: 300px;
+    top: 200px;
+    color: white;
+}
+#station_6{
+    position: fixed;
+    left: 400px;
+    top: 200px;
+    color: white;
+}
+#station_7{
+    position: fixed;
+    left: 500px;
+    top: 200px;
+    color: white;
+}
+    
