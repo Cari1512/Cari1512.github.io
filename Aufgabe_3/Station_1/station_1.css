@@ -18,12 +18,12 @@ body{
 }
 #busch {
     position: absolute;
-    left: 400px;
-    top: 100px;
+    left: -50px;
+    top: -50px;
 }
 #pinguin {
     position: absolute;
-    left: 900px;
-    top: 400px;
+    left: 450px;
+    top: 200px;
 
 }
