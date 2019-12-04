@@ -87,11 +87,6 @@ function  asia() {
     document.querySelector("#rate h2").innerHTML = RateAsia.toFixed(1)+"%";
     document.querySelector("#abs h2").innerHTML = AbsAsia.toFixed(1);  
     document.querySelector(".cloud").setAttribute("style","height:"+PartAsia*2+"%")
-   var newElement = document.createElement("img")
-   newElement.src="images/fear.png"
-   document.body.appendChild(newElement)
-   newElement.innerHTML="Help!"
-  
 }
 
 //Australia
