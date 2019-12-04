@@ -10,7 +10,7 @@ window.addEventListener("load", function(tone){
   document.querySelector("#button7").addEventListener("mousedown", function(){playSample("C.mp3"); });
   document.querySelector("#button8").addEventListener("mousedown", function(){playSample("laugh-1.mp3"); });
   document.querySelector("#button9").addEventListener("mousedown", function(){playSample("laugh-2.mp3"); });
-  document.querySelector("#play").addEventListener("click",StartBeat);
+  document.querySelector("#play").addEventListener("click",mytrack);
 });
 function playSample(tone){
     var sound = new Audio("assets/"+ tone);
@@ -19,15 +19,15 @@ function playSample(tone){
 
 //Beat
 
-function StartBeat() {
-  var Kick = setInterval(myBeat, 300);
+function mytrack () {
+  var tempo = setInterval(myBeat, 300);
   var index = 0;
-  var Beat = ["kick.mp3", "kick.mp3", "snare.mp3", "hihat.mp3"];
+  var Beat = ["assets/kick.mp3","assets/kick.mp3", "assets/hihat.mp3", "assets/snare.mp3","assets/hihat.mp3","assets/kick.mp3",  "assets/hihat.mp3", "assets/snare.mp3","assets/hihat.mp3"];
   function myBeat() {
       var mySound = new Audio(Beat[index]);
       mySound.play();
       index += 1;
-      if (index > 3)
+      if (index > 9)
           index = 0;
       console.log(Beat[index]);
   }

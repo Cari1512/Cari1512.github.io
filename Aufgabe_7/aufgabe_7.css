@@ -84,5 +84,7 @@ body{
 #play{
     margin: auto;
     width: 170px;
-    padding: 20px;
+    padding-top : 20px;
+    padding-left: 70px;
+
 }

@@ -17,16 +17,16 @@ function playSample(tone) {
 }
 //Beat
 function mytrack() {
-    var tempo = setInterval(mytrack, 300);
+    var tempo = setInterval(myBeat, 300);
     var index = 0;
-    var beat = ["kick.mp3", "kick.mp3", "snare.mp3", "hihat.mp3"];
-    function track() {
-        var mySong = new Audio(beat[index]);
-        mySong.play();
+    var Beat = ["assets/kick.mp3", "assets/kick.mp3", "assets/hihat.mp3", "assets/snare.mp3", "assets/hihat.mp3", "assets/kick.mp3", "assets/hihat.mp3", "assets/snare.mp3", "assets/hihat.mp3"];
+    function myBeat() {
+        var mySound = new Audio(Beat[index]);
+        mySound.play();
         index += 1;
-        if (index > 3)
+        if (index > 9)
             index = 0;
-        console.log(beat[index]);
+        console.log(Beat[index]);
     }
     ;
 }
