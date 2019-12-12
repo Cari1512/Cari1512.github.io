@@ -1,18 +1,18 @@
 //Buttons
 window.addEventListener("load", function (tone) {
-    document.querySelector("#button1").addEventListener("mousedown", function () { playSample("kick.mp3"); });
-    document.querySelector("#button2").addEventListener("mousedown", function () { playSample("hihat.mp3"); });
-    document.querySelector("#button3").addEventListener("mousedown", function () { playSample("snare.mp3"); });
-    document.querySelector("#button4").addEventListener("mousedown", function () { playSample("F.mp3"); });
-    document.querySelector("#button5").addEventListener("mousedown", function () { playSample("G.mp3"); });
-    document.querySelector("#button6").addEventListener("mousedown", function () { playSample("A.mp3"); });
-    document.querySelector("#button7").addEventListener("mousedown", function () { playSample("C.mp3"); });
-    document.querySelector("#button8").addEventListener("mousedown", function () { playSample("laugh-1.mp3"); });
-    document.querySelector("#button9").addEventListener("mousedown", function () { playSample("laugh-2.mp3"); });
+    document.querySelector("#button1").addEventListener("mousedown", function () { playSample("kick"); });
+    document.querySelector("#button2").addEventListener("mousedown", function () { playSample("hihat"); });
+    document.querySelector("#button3").addEventListener("mousedown", function () { playSample("snare"); });
+    document.querySelector("#button4").addEventListener("mousedown", function () { playSample("F"); });
+    document.querySelector("#button5").addEventListener("mousedown", function () { playSample("G"); });
+    document.querySelector("#button6").addEventListener("mousedown", function () { playSample("A"); });
+    document.querySelector("#button7").addEventListener("mousedown", function () { playSample("C"); });
+    document.querySelector("#button8").addEventListener("mousedown", function () { playSample("laugh-1"); });
+    document.querySelector("#button9").addEventListener("mousedown", function () { playSample("laugh-2"); });
     document.querySelector("#play").addEventListener("click", mytrack);
 });
 function playSample(tone) {
-    var sound = new Audio("assets/" + tone);
+    var sound = new Audio("assets/" + tone + ".mp3");
     sound.play();
 }
 //Beat
