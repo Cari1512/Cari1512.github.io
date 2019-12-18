@@ -1,5 +1,8 @@
+// Variablen
 var record = false;
-var Beat = ["assets/kick.mp3", "assets/kick.mp3", "assets/hihat.mp3", "assets/snare.mp3", "assets/hihat.mp3", "assets/kick.mp3", "assets/hihat.mp3", "assets/snare.mp3", "assets/hihat.mp3"];
+var beat = ["kick", "kick", "hihat", "snare", "hihat", "kick", "hihat", "snare", "hihat"];
+var tempo;
+var index = 0;
 //Buttons
 window.addEventListener("load", function () {
     document.querySelector("#button1").addEventListener("mousedown", function () { PlaySample("kick"); });
@@ -15,40 +18,52 @@ window.addEventListener("load", function () {
     document.querySelector("#recordButton").addEventListener("click", recording);
     document.querySelector("#deleteButton").addEventListener("click", deleting);
 });
+//Abspielen eines Tons
 function PlaySample(tone) {
     var sound = new Audio("assets/" + tone + ".mp3");
     sound.play();
     if (record == true) {
-        Beat.push(tone);
+        beat.push(tone);
     }
 }
-//Beat
-var index = 0;
-var tempo;
+//playButton
 function myTrack() {
     if (document.getElementById("playButton").classList.contains("fa-play")) {
         document.getElementById("playButton").classList.remove("fa-play");
         document.getElementById("playButton").classList.add("fa-pause");
-        var tempo = setInterval(myBeat, 300);
+        tempo = setInterval(myBeat, 300);
         record = false;
     }
     else {
         document.getElementById("playButton").classList.remove("fa-pause");
         document.getElementById("playButton").classList.add("fa-play");
         clearInterval(tempo);
+        console.log("Pause");
     }
 }
+//Abspielen vom Array (pre-set beat oder Aufnahme)
 function myBeat() {
-    playSample(Beat[index]);
+    PlaySample(beat[index]);
     index += 1;
     if (index > 9)
         index = 0;
-    console.log(Beat[index]);
+    if (beat.length == 0) {
+        beat = ["kick", "kick", "hihat", "snare", "hihat", "kick", "hihat", "snare", "hihat"];
+    }
 }
+//recordButton
 function recording() {
-    record = true;
+    if (record == false) {
+        record = true;
+        document.getElementById("recordButton").style.color = "#BF1932";
+    }
+    else {
+        record = false;
+        document.getElementById("recordButton").style.color = "white";
+    }
 }
+//deleteButton
 function deleting() {
-    Beat.length = 0;
+    beat.length = 0;
 }
 //# sourceMappingURL=aufgabe_8.js.map

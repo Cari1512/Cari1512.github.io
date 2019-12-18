@@ -3,6 +3,7 @@ body{
     text-decoration: none;
     
 }
+
 #button1{
     background-color: #7B66E6;
     border-radius: 15px;
@@ -82,16 +83,30 @@ body{
     padding-top: 300px;
 }
 #playButton{
-    
+    padding: 15px;
     margin: auto;
     color: white;
-    
+    font-size: 500%; 
 }
-#recordButton{
-    margin: auto;
-    color: white;
+#playButton:hover{
+    color: grey
 }
 #deleteButton{
+    padding: 15px;
     margin: auto;
     color: white;
+    font-size: 500%;
 }
+#deleteButton:hover{
+    color: grey
+}
+#recordButton{
+    color: white;
+    padding: 15px;
+    margin: auto;
+    font-size: 500%;
+}
+#recordButton:hover{
+    color: grey
+}
+

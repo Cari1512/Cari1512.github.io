@@ -1,0 +1,6 @@
+
+
+AUFGABE 9
+oben eingbeleiste--enter--unten dran
+abhacken, mülleimer bei hover
+gesamtanzahl oben anzeigen
