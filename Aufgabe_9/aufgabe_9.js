@@ -1,5 +1,4 @@
 var arraytodo = [];
-var counter = "" + arraytodo.length;
 window.addEventListener("load", function () {
     //Input
     document.querySelector("#ADD").addEventListener("click", toDoInput);
@@ -20,13 +19,13 @@ function addTask(inputValue) {
     para.innerText = inputValue; //para nimmt den Wert vom input Feld
     para.classList.add("far", "fa-circle"); // ckeckbox wird vorne dran geklebt
     var trash = document.createElement("button"); //button für müll
-    trash.classList.add("fa", "fa-trash-alt");
+    trash.classList.add("fa", "fa-trash-alt"); //Mülleimer auf button
     arraytodo.push(inputValue); //in array
     console.log(arraytodo);
     var counter = "" + arraytodo.length;
     document.querySelector(".header").innerHTML = counter + " tasks";
     para.appendChild(trash); //müll in para
-    document.querySelector("#toDos").appendChild(para); //Liste para in den wrap der to do liste
+    document.querySelector("#toDos").appendChild(para); //Liste para in den wrap/div der to do liste
     trash.addEventListener("click", Bin); // Müll funktion-->
     para.addEventListener("click", Check); //Check funktion
     function Check() {
