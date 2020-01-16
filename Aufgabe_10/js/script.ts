@@ -1,26 +1,19 @@
-/**
- * Die ToDos werden in dem Array todosText gespeichert
- * Jedes ToDo hat aber, neben dem ToDo-Text, einen zweiten
- * Wert, nämlich ob es erledigt ist oder nicht
- * (checked / unchecked). Der Einsatz von einem eindimensionalen
- * Array ermöglicht aber nur, dass wir ein Wert nach dem anderen auflisten.
- * Den zweiten Wert zu einem ToDo speichern wir also in einem
- * zweiten Array. Beide Arrays beinhalten also Infos zu einem ToDo,
- * den ToDo-Text und den Erledigtstatus eines ToDos. Die entsprechende
- * Stelle eines ToDos zeigt jetzt in den Arrays auf die entsprechenden
- * Werte, bspw. Stelle 0 im Array todosText und Stelle 0 im Array
- * todosChecked gehören zusammen zu einem ToDo.
- */
 
 interface ToDo {
-    text: string[];
-    Checked: boolean[];
+    text: string;
+    Checked: boolean;
 }
 
-var todos: ToDo = {
-    text: ["Lorem", "Ipsum", "Dolor"],
-    Checked: [true, false, false]
-};
+var todos: ToDo[] = [
+    {
+    text: "Putzen",
+    Checked: false
+},
+{
+    text: "Einkaufen",
+    Checked: true  
+}
+];
 
 /**
  * Die Anwendung wird immer wieder auf die selben
@@ -61,6 +54,7 @@ window.addEventListener("load", function (): void {
      * aus den Arrays in den DOM gezeichnet werden.
      */
     drawListToDOM();
+    
 });
 
 function drawListToDOM(): void {
@@ -68,7 +62,7 @@ function drawListToDOM(): void {
     todosDOMElement.innerHTML = "";
 
     // das ToDo-Array durchlaufen (iterieren) und Todo für Todo in den DOM schreiben
-    for (let index: number = 0; index < todos.text.length; index++) {
+    for (let index: number = 0; index < todos.length; index++) {
         // so oft wie array länge, index wird als nummer festgelegt, geht nur it let
         /**
          * Neues DIV-Element erstellen (würde auch mit innerHTML = "<div class='todo'></div>" gehen, 
@@ -87,8 +81,8 @@ function drawListToDOM(): void {
          * ein Wert einer Variablen benötigt (bspw. für die CSS Klasse oder für den ToDo-Text),
          * hier muss die Zeichenkette unterbrochen werden.
          */
-        todo.innerHTML = "<span class='check " + todos.Checked[index] + "'><i class='fas fa-check'></i></span>" // es wird entweder true oder false hingeschrieben(klasse kann amn stylen)
-            + todos.text[index] +
+        todo.innerHTML = "<span class='check " + todos[index].Checked + "'><i class='fas fa-check'></i></span>" // es wird entweder true oder false hingeschrieben(klasse kann amn stylen)
+            + todos[index].text +
             "<span class='trash fas fa-trash-alt'></span>";
 
         // Zuweisen der Event-Listener für den Check- und den Trash-Button
@@ -105,26 +99,26 @@ function drawListToDOM(): void {
 
         // Bis hier hin wurde das neue Todo "zusammengebaut", jetzt wird es in den DOM gerendert.
         todosDOMElement.appendChild(todo);
-        todosDOMElement.insertBefore(todo, todosDOMElement.childNodes[0]);
+      
     }
 
     updateCounter();
 }
 
 function updateCounter(): void {
-   // counterDOMElement.innerHTML = todos.text.length + " in total";
+   
    var unchecked: number = 0;
    var checked: number = 0;
 
-   for (var i: number = 0; i < todos.Checked.length; i++) {
-       if (todos.Checked[i] == true) {
+   for (var index: number = 0; index < todos.length; index++) {
+       if (todos[index].Checked == true) {
            checked++;
        }
        else {
            unchecked++;
        }
    }
-   counterDOMElement.innerHTML = todos.text.length + " total" + "|" + unchecked + " open" + "|" + checked + " done";
+   counterDOMElement.innerHTML = todos.length + " total" + "|" + unchecked + " open" + "|" + checked + " done";
 }
 
 /**
@@ -144,9 +138,12 @@ function addTodo(): void {
          * Status der ToDos abbildet, für dieses ToDo (weil selbe Stelle im Array)
          * der Status "unchecked", hier false, gepusht.
          */
-        todos.text.push(inputDOMElement.value);
-        todos.Checked.push(false); // standartmäsig nicht abgehakt
+        let addtoDotask: ToDo = {
+        text: inputDOMElement.value,
+        Checked: false  // standartmäsig nicht abgehakt
+        };
 
+        todos.unshift(addtoDotask); //an anfang dran
         // Jetzt wird der Text aus dem Eingabefeld gelöscht
         inputDOMElement.value = "";
 
@@ -176,7 +173,7 @@ function toggleCheckState(index: number): void {
      * Alternativ könnte man hier natürlich auch andere Schreibweisen (wie sie im
      * Kurs behandelt wurden) nutzen.
      */
-    todos.Checked[index] = !todos.Checked[index]; //durch index genaue bestimmung des gewählten elements möglich, boolean wird umgeschaltet
+    todos[index].Checked = !todos[index].Checked; //durch index genaue bestimmung des gewählten elements möglich, boolean wird umgeschaltet
     //true wird tz false und false wird true
     /**
      * Die zentrale Funktion, um die Liste des ToDo-Arrays in den DOM zu rendern
@@ -195,8 +192,7 @@ function deleteTodo(index: number): void {
      * Jetzt muss diese Stelle beider Arrays gelöscht werden,
      * das ToDo-Text-Array und das Checked/Unchecked-Array
      */
-    todos.text.splice(index, 1); //splice, bestimmte stelle wird gemoved, die eins sagt wieviele Werte
-    todos.Checked.splice(index, 1);
+    todos.splice(index, 1); //splice, bestimmte stelle wird gemoved, die eins sagt wieviele Werte
 
     /**
      * Die zentrale Funktion, um die Liste des ToDo-Arrays in den DOM zu rendern
@@ -204,3 +200,37 @@ function deleteTodo(index: number): void {
      */
     drawListToDOM();
 }
+declare var Artyom: any;
+
+window.addEventListener("load", function(): void {
+    const artyom: any = new Artyom();
+    
+    artyom.addCommands({
+        indexes: ["erstelle Aufgabe*"], 
+        smart: true,
+        action: function(i: any, wildcard: string): void {
+            console.log("AUFGABE");
+        }
+    });
+    
+    function startContinuousArtyom(): void {
+        artyom.fatality();
+    
+        setTimeout(
+            function(): void {
+                artyom.initialize({
+                    lang: "de-DE",
+                    continuous: true,
+                    listen: true,
+                    interimResults: true,
+                    debug: true
+                }).then(function(): void {
+                    console.log("Ready!");
+                });
+            }, 
+            250);
+    }
+    
+    startContinuousArtyom();
+    
+});
