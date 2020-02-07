@@ -1,0 +1,89 @@
+footer{
+    width: 180px;
+    margin: auto;
+}
+h1{
+    width: 180px;
+    margin: auto;
+}
+.computer-player{
+    width: 1000px;
+    height: 200px;
+    margin: auto;
+   
+}
+.playing-pile{
+    width: 500px;
+    height: 200px;
+    position: relative;
+    left: 260px;
+}
+.draw-pile{
+    width: 500px;
+    height: 200px;
+    float: right;
+    position: relative;
+    right: 260px;  
+}
+.player{
+    width: 1000px;
+    height: 200px;
+    margin: auto;
+  
+
+}
+
+.Card{
+    width: 100px;
+    height: 150px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.RED{
+    background-color: #FF0000;
+}
+.GREEN{
+    background-color: #00ff00;
+}
+.BLUE{
+    background-color: #0000ff;
+}
+.YELLOW{
+    background-color: #ffff00;
+    color: #000000;
+}
+.black{
+    background-color: #000000;
+}
+.computer-player .Card{
+    margin-left: 20px;
+    float: left;
+}
+.player .Card{
+    margin-left: 20px;
+    float: left;
+}
+
+.draw-pile .Card{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.playing-pile .Card{
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.start{
+    height: 50px;
+    width: 100px;
+}
+.Card #back{
+    transform: rotate(180deg);
+    padding-bottom: 35px;
+}
+.Card p {padding-left: 10px;}
+body{
+    background-color: orange;
+    
+}

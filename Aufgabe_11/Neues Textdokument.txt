@@ -1,0 +1,11 @@
+ein array alle karten
+für jeden spieler ein array; Karten zwischen den Arrays
+
+splice()
+
+
+1 object für karte
+
+dann object karte im Dom gezeichnet
+
+viele Karten sollen generiert werden und in Dom gezeichnet werdeb
